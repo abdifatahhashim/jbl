@@ -189,7 +189,17 @@ img {
 }
 
 /* Add blur header */
-
+.blur-header{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(23, 12%, 4%, .2);
+  backdrop-filter: blur(32px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -279,17 +289,17 @@ img {
 
 .home--social-links{
   display: grid;
-  row-gap: 75rem;
+  row-gap: .75rem;
 }
 
-.home--social-link{
+.home--social-links{
   font-size: 1.25rem;
   color: var(--text-color);
   transition: color .4s;
 
 }
 
-.home--social-link:hover{
+.home--social-links:hover{
   color: var(--first-color);
 
 }
@@ -339,7 +349,7 @@ img {
    .about--img{
     width: 280px;
     justify-self: center;
-    
+
    }
 /*=============== FAVORITE ===============*/
 
