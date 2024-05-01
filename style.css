@@ -55,3 +55,331 @@
     padding: 0;
     margin: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+/*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav__logo{
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+
+}
+
+.nav--toggle,
+.nav--close{
+  display: flex;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+@media screen  and (max-width: 1150px){
+  .nav__menu{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: hsl(23, 12%, 4%, .2);
+    width: 100%;
+    padding-block: 5.5rem 4.5rem;
+    backdrop-filter: blur(32px);
+    transition: top .4s;
+  }
+  
+}
+
+.nav__list{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+
+}
+
+.nav__link{
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  transition: color .4s;
+}
+
+.nav__link:hover{
+  color: var(--first-color);
+
+}
+
+.nav--close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+
+}
+
+/* Show menu */
+.show-menu{
+  top: 0;
+}
+
+/* Add blur header */
+.blur-header{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(23, 12%, 4%, .2);
+  backdrop-filter: blur(32px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+.home--container{
+  position: relative;
+  padding-block: 7rem 1rem;
+  row-gap: 2.5rem;
+
+}
+.home--content{
+  position: relative;
+  display: grid;
+  justify-self: center;
+}
+
+.home--img{
+  width: 220px;
+}
+
+.home--title{
+  font-size: var(--biggest-font-size);
+  display: flex;
+  column-gap: .25rem;
+  color: var(--first-color);
+  position: absolute;
+  top: -2rem;
+  justify-self: center;
+}
+
+.home--title span:nth-child(2){
+  z-index: -1;
+}
+
+.home--tooltip{
+  position: absolute;
+  top: -.5rem;
+  right: 1.5rem;
+}
+.home--tooltip-img{
+  width: 60px;
+
+}
+
+.home--tooltip-text{
+  background: var(--gradient-color);
+  padding: .25rem .75rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  border-radius: 4rem;
+  font-size: var(--small-font-size);
+  position: absolute;
+  transform: translate(60px,-40px);
+  white-space: nowrap;
+}
+
+.home--social{
+  display: grid;
+  justify-items: center;
+  row-gap: 6rem;
+  position: absolute;
+  top: 9rem;
+  left: -1.5rem;
+
+}
+.home--social-text{
+  position: relative;
+  rotate: 90deg;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+
+}
+
+.home--social-text::after{
+  content: '';
+  width: 48px;
+  height: 1px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  right: -64px;
+
+}
+
+.home--social-links{
+  display: grid;
+  row-gap: .75rem;
+}
+
+.home--social-links{
+  font-size: 1.25rem;
+  color: var(--text-color);
+  transition: color .4s;
+
+}
+
+.home--social-links:hover{
+  color: var(--first-color);
+
+}
+.home--button{
+  justify-self: center;
+
+}
+/*=============== BUTTON ===============*/
+
+.button{
+  background: var(--gradient-color);
+  padding: .75rem 1.5rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  transition: box-shadow .4s;
+
+}
+.button i{
+  font-size: 2rem;
+  font-weight: initial;
+  color: var(--first-color);
+
+}
+.button:hover{
+  box-shadow: 0 12px 32px hsla(23, 100%, 50%, .12);
+}
+
+/*=============== ABOUT ===============*/
+   .about--container{
+    row-gap: 3.5rem;
+   }
+  
+   .about--data{
+    text-align: center;
+   }
+
+   .about--description{
+    margin-bottom: 2.5rem;
+
+   }
+
+   .about--img{
+    width: 280px;
+    justify-self: center;
+
+   }
+/*=============== FAVORITE ===============*/
+
+
+/* Swiper class */
+
+
+/*=============== MODEL ===============*/
+
+
+/*=============== SPONSOR ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
